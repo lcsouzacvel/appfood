@@ -1,0 +1,190 @@
+Aula de web 18/04/2023
+
+Instalando o yarn
+
+O Yarn é um gerenciador de pacotes para aplicar comandos prontos ao código de uma aplicação. Por ser uma ferramenta de código aberto, há uma comunidade de colaboradores experientes e qualificados que, continuamente, contribuem com novas adições de 
+
+npm i -g yarn
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+added 1 package, and audited 2 packages in 2s
+
+found 0 vulnerabilities
+npm notice 
+npm notice New major version of npm available! 8.11.0 -> 9.6.4
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.6.4
+npm notice Run npm install -g npm@9.6.4 to update!
+
+yarn -v 
+1.22.19
+
+
+yarn init -y
+
+yarn init v1.22.19
+warning The yes flag has been set. This will automatically answer yes to all questions, which may have security implications.
+success Saved package.json
+Done in 0.04s.
+
+Apos aplicar yarn init -y ele cria um pacote {}package.json na raiz da pasta do projeto
+
+
+yarn add -D typescript
+
+yarn add v1.22.19
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 1 new dependency.
+info Direct dependencies
+└─ typescript@5.0.4
+info All dependencies
+└─ typescript@5.0.4
+Done in 1.80s.
+ 
+ yarn tsc --init
+ 
+node não conhece typescript
+ypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem.  
+ 
+ yarn tsc cria um arquivo javascript
+ dentro da pasta src vai criar um arquivo index.js
+ APPFOOD$ ls
+'Aula Web backend'   node_modules   package.json   src   tsconfig.json   yarn.lock
+aluno@brj4040trq:~/APPFOOD$ cd src 
+aluno@brj4040trq:~/APPFOOD/src$ n index.js
+n: comando não encontrado
+aluno@brj4040trq:~/APPFOOD/src$ node index.js
+Olá Type Script
+aluno@brj4040trq:~/APPFOOD/src$  
+
+dentro do arquivo tsconfig.json
+ctrl f 
+buscar a variavel outDir
+descomentar e mudar para 
+"outDir": "dist", 
+
+vesionando codigo com o git init
+reduzindo as pastas
+criar na raiz o arquivo .gitignore
+dentro do arquivo 
+dist
+node_modules
+
+ele não ira carregar os arquivos para o git que
+estiver nesta pasta
+
+
+instalar a extenção dentro do vscode
+EditorConfig for VS Code v0.16.?
+ESLint v2.4.?
+
+GeneratorEditConfig
+na raiz clicar com botão direito e criar o
+arquivo editorconfig
+editar o arquivo
+
+ESLint extenção para criar padrões
+
+instalando e configurando
+aluno@brj4040trq:~/APPFOOD$ npm init @eslint/config
+Need to install the following packages:
+  @eslint/create-config
+Ok to proceed? (y) y
+? How would you like to use ESLint? … 
+  To check syntax only
+  To check syntax and find problems
+▸ To check syntax, find problems, and enforce code style(modo mais chato onde )
+
+npm init @eslint/config
+Need to install the following packages:
+  @eslint/create-config
+Ok to proceed? (y) y
+✔ How would you like to use ESLint? · style
+✔ What type of modules does your project use? · esm
+? Which framework does your project use? … 
+  React
+  Vue.js
+▸ None of these
+
+npm init @eslint/config
+Need to install the following packages:
+  @eslint/create-config
+Ok to proceed? (y) y
+✔ How would you like to use ESLint? · style
+✔ What type of modules does your project use? · esm
+✔ Which framework does your project use? · none
+✔ Does your project use TypeScript? · No / Yes
+? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+   Browser
+✔ Node
+
+npm init @eslint/config
+Need to install the following packages:
+  @eslint/create-config
+Ok to proceed? (y) y
+✔ How would you like to use ESLint? · style
+✔ What type of modules does your project use? · esm
+✔ Which framework does your project use? · none
+✔ Does your project use TypeScript? · No / Yes
+✔ Where does your code run? · node
+✔ How would you like to define a style for your project? · prompt
+✔ What format do you want your config file to be in? · JSON
+✔ What style of indentation do you use? · tab
+✔ What quotes do you use for strings? · single
+✔ What line endings do you use? · unix
+✔ Do you require semicolons? · No / Yes
+Local ESLint installation not found.
+The config that you've selected requires the following dependencies:
+
+@typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+✔ Would you like to install them now? · No / Yes
+✔ Which package manager do you want to use? · yarn
+Installing @typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest, eslint@latest
+yarn add v1.22.19
+[1/4] Resolving packages...
+├─ path-key@3.1.1
+├─ path-type@4.0.0
+├─ picomatch@2.3.1
+├─ punycode@2.3.0
+├─ queue-microtask@1.2.3
+├─ resolve-from@4.0.0
+├─ reusify@1.0.4
+├─ rimraf@3.0.2
+├─ run-parallel@1.2.0
+├─ shebang-command@2.0.0
+├─ shebang-regex@3.0.0
+├─ slash@3.0.0
+├─ strip-ansi@6.0.1
+├─ strip-json-comments@3.1.1
+├─ supports-color@7.2.0
+├─ text-table@0.2.0
+├─ to-regex-range@5.0.1
+├─ tslib@1.14.1
+├─ type-check@0.4.0
+├─ type-fest@0.20.2
+├─ uri-js@4.4.1
+├─ which@2.0.2
+├─ word-wrap@1.2.3
+├─ yallist@4.0.0
+└─ yocto-queue@0.1.0
+Done in 24.47s.
+Successfully created .eslintrc.json file in /home/aluno/APPFOOD
+
+yarn add express vai adicionar linhas ao arquivo 
+package.json
+
+"dependencies": {
+    "express": "^4.18.2"
+}
+
+
+
+
+
+
+
+ 
